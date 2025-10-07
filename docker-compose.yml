@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=1
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=jobnet_demo
+      - DB_USER=root
+      - DB_PASS=rootpass
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www/html
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: jobnet_demo
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
