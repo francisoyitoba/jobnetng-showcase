@@ -7,17 +7,31 @@ namespace App;
 
 session_start();
 
-// Load .env (simple loader)
+// Load .env (simple, explicit loader)
 $envPath = dirname(__DIR__) . '/.env';
 if (is_file($envPath)) {
-    $lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) ?: [];
+
     foreach ($lines as $line) {
-        if (str_starts_with(trim($line), '#')) {
+        $line = trim($line);
+        if ($line === '' || str_starts_with($line, '#')) {
             continue;
         }
-        [$k, $v] = array_map('trim', explode('=', $line, 2) + [null, null]);
-        if ($k !== null && $v !== null && getenv($k) === false) {
-            putenv("$k=$v");
+
+        $pos = strpos($line, '=');
+        if ($pos === false) {
+            continue;
+        }
+
+        $k = trim(substr($line, 0, $pos));
+        $v = trim(substr($line, $pos + 1));
+
+        if ($k === '') {
+            continue;
+        }
+
+        if (getenv($k) === false) {
+            putenv(sprintf('%s=%s', $k, $v));
         }
     }
 }
