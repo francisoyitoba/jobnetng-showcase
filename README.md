@@ -1,3 +1,6 @@
+[![PHP CI](https://github.com/francisoyitoba/jobnetng-showcase/actions/workflows/php.yml/badge.svg)](…)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
 # Jobnet.ng — Procedural PHP Showcase (Community Edition)
 
 A trimmed, **sanitized** version of the Jobnet.ng codebase to demonstrate architecture and coding style.
