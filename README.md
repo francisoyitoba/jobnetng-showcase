@@ -39,7 +39,7 @@ job recommendations, and cover letter generation.
    ```
 4. Run the PHP dev server:
    ```bash
-   php -S 127.0.0.1:8080 -t public
+   php -S 127.0.0.1:8080 public/index.php
    ```
 5. Try endpoints (examples):
    - `GET  /api/health`
