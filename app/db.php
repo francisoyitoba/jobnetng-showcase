@@ -1,4 +1,5 @@
 <?php
+
 // app/db.php
 declare(strict_types=1);
 
@@ -6,9 +7,12 @@ namespace App;
 
 use PDO;
 
-function db(): PDO {
+function db(): PDO
+{
     static $pdo = null;
-    if ($pdo instanceof PDO) return $pdo;
+    if ($pdo instanceof PDO) {
+        return $pdo;
+    }
 
     $host = getenv('DB_HOST') ?: '127.0.0.1';
     $port = getenv('DB_PORT') ?: '3306';
