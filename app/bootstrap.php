@@ -7,29 +7,36 @@ namespace App;
 
 session_start();
 
-// Load .env (simple, explicit loader)
+// Load .env (robust, PHPStan-friendly)
 $envPath = dirname(__DIR__) . '/.env';
+
 if (is_file($envPath)) {
-    $lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    if (is_array($lines)) {
-        foreach ($lines as $raw) {
-            $line = trim($raw);
-            if ($line === '' || $line[0] === '#') {
-                continue;
-            }
+    $contents = file_get_contents($envPath);
+    if ($contents !== false) {
+        $lines = preg_split('/\R/', $contents); // split on any newline
+        if (is_array($lines)) {
+            foreach ($lines as $lineRaw) {
+                $line = trim((string) $lineRaw);
+                if ($line === '' || (isset($line[0]) && $line[0] === '#')) {
+                    continue;
+                }
 
-            $pos = strpos($line, '=');
-            if ($pos === false || $pos === 0) {
-                // no '=' or empty key → skip
-                continue;
-            }
+                $pos = strpos($line, '=');
+                if ($pos === false) {
+                    continue; // malformed line
+                }
 
-            $key = trim(substr($line, 0, $pos));
-            $val = trim(substr($line, $pos + 1));
+                $k = trim(substr($line, 0, $pos));
+                if ($k === '') {
+                    continue; // empty key
+                }
 
-            // only set if not already present
-            if ($key !== '' && getenv($key) === false) {
-                putenv($key . '=' . $val);
+                $v = trim(substr($line, $pos + 1));
+
+                // Only set if not already present in environment
+                if (getenv($k) === false) {
+                    putenv($k . '=' . $v);
+                }
             }
         }
     }
