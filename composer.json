@@ -8,7 +8,8 @@
     "phpstan/phpstan": "^1.11"
   },
   "scripts": {
-    "lint": "phpcs --standard=PSR12 public app routes",
+    "lint": "phpcs --standard=PSR12 --report=full --report-width=120 public app routes",
+    "fix":  "phpcbf --standard=PSR12 public app routes",
     "stan": "phpstan analyse --level=5 app public routes"
   }
 }
