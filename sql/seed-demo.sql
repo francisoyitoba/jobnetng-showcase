@@ -1,8 +1,8 @@
 -- sql/seed-demo.sql (sample demo data)
 
 INSERT INTO users (email,password_hash,role,name,created_at) VALUES
-('seeker@example.com',  '$2y$10$VqH1zYq7i0oTqAq3a6f1cO7n3l8x2FrxW4SOKC1yJb8y0b1kzS2pS', 'seeker','Ada Seeker',   NOW()),
-('employer@example.com','$2y$10$VqH1zYq7i0oTqAq3a6f1cO7n3l8x2FrxW4SOKC1yJb8y0b1kzS2pS', 'employer','Acme HR',    NOW());
+('seeker@example.com',  '$2b$10$R6DL1XX5vSyx99PcNtGXyOC7f2QVPXPoWt/68EFXb5bwQ17tgfbLO', 'seeker','Ada Seeker',   NOW()),
+('employer@example.com','$2b$10$R6DL1XX5vSyx99PcNtGXyOC7f2QVPXPoWt/68EFXb5bwQ17tgfbLO', 'employer','Acme HR',    NOW());
 
 -- password hash above is for "password123"
 
