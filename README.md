@@ -54,7 +54,14 @@ job recommendations, and cover letter generation.
 
 ## Quick test with Postman
 
-Import the [Jobnet Showcase collection](docs/postman/Jobnet.showcase.collection.json) into Postman to exercise the basics quickly. The minimal set includes health, seeker login, job listing, the "my applications" view, and the AI CV analysis stub. Update the request URLs if your server runs on a different host or port.
+Import the [Jobnet Showcase collection](docs/postman/Jobnet.showcase.collection.json) into Postman to exercise the basics quickly. The bundle covers:
+- Health check
+- Auth register/login (seeker)
+- Job listing, creation, and apply flows
+- Application history
+- AI helpers for CV analysis, cover letters, and recommendations
+
+Update the request URLs if your server runs on a different host or port.
 
 Demo accounts (from seeds):
 - **Seeker:** `seeker@example.com` / `password123`
