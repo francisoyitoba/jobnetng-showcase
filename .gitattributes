@@ -1,0 +1,4 @@
+/.github/ export-ignore
+/.docker/ export-ignore
+/docker-compose.yml export-ignore
+/composer.phar export-ignore
