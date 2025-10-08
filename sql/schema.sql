@@ -41,3 +41,5 @@ CREATE TABLE IF NOT EXISTS job_apps (
   CONSTRAINT fk_app_job FOREIGN KEY (job_id) REFERENCES jobs(id) ON DELETE CASCADE,
   CONSTRAINT fk_app_user FOREIGN KEY (seeker_user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE jobs ADD INDEX idx_jobs_status_created (status, created_at);

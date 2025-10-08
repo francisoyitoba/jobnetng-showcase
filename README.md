@@ -52,6 +52,10 @@ job recommendations, and cover letter generation.
    - `POST /api/jobs/apply`
    - `GET  /api/applications/mine`
 
+## Quick test with Postman
+
+Import the [Jobnet Showcase collection](docs/postman/Jobnet.showcase.collection.json) into Postman to exercise the main API flows quickly. Update the `base_url` collection variable if your server runs on a different host or port.
+
 Demo accounts (from seeds):
 - **Seeker:** `seeker@example.com` / `password123`
 - **Employer:** `employer@example.com` / `password123`
