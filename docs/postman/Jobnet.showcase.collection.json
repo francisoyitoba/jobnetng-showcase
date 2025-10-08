@@ -1,259 +1,50 @@
 {
-  "info": {
-    "_postman_id": "79e987a9-0a47-487e-ab18-1b1386a7bced",
-    "name": "Jobnet Showcase",
-    "description": "Sample requests for exercising the Jobnet.ng showcase API endpoints.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "variable": [
-    {
-      "key": "base_url",
-      "value": "http://127.0.0.1:8080",
-      "type": "string"
-    }
-  ],
+  "info": { "name": "Jobnet Showcase", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
   "item": [
-    {
-      "name": "Health Check",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{base_url}}/api/health",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "health"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Register",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"email\": \"newuser@example.com\",\n  \"password\": \"password123\",\n  \"first_name\": \"Demo\",\n  \"last_name\": \"User\"\n}"
-        },
-        "url": {
-          "raw": "{{base_url}}/api/auth/register",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "auth",
-            "register"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Login",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"email\": \"seeker@example.com\",\n  \"password\": \"password123\"\n}"
-        },
-        "url": {
-          "raw": "{{base_url}}/api/auth/login",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "auth",
-            "login"
-          ]
-        }
-      }
-    },
-    {
-      "name": "List Jobs",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{base_url}}/api/jobs",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "jobs"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Create Job",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"title\": \"Product Designer\",\n  \"description\": \"Craft intuitive experiences for our users.\",\n  \"location\": \"Remote\",\n  \"employment_type\": \"full-time\"\n}"
-        },
-        "url": {
-          "raw": "{{base_url}}/api/jobs/create",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "jobs",
-            "create"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Apply to Job",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"job_id\": 1,\n  \"cover_letter\": \"Excited to contribute to the team!\"\n}"
-        },
-        "url": {
-          "raw": "{{base_url}}/api/jobs/apply",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "jobs",
-            "apply"
-          ]
-        }
-      }
-    },
-    {
-      "name": "My Applications",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{base_url}}/api/applications/mine",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "applications",
-            "mine"
-          ]
-        }
-      }
-    },
-    {
-      "name": "AI CV Analysis",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"cv_text\": \"Detail-oriented product designer with 5 years of experience...\"\n}"
-        },
-        "url": {
-          "raw": "{{base_url}}/api/ai/cv/analyze",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "ai",
-            "cv",
-            "analyze"
-          ]
-        }
-      }
-    },
-    {
-      "name": "AI Cover Letter",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"job_title\": \"Product Designer\",\n  \"company\": \"Jobnet\",\n  \"highlights\": [\n    \"User-centric mindset\",\n    \"Experience leading cross-functional teams\"\n  ]\n}"
-        },
-        "url": {
-          "raw": "{{base_url}}/api/ai/cover-letter",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "ai",
-            "cover-letter"
-          ]
-        }
-      }
-    },
-    {
-      "name": "AI Recommendations",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"profile\": {\n    \"skills\": [\"UI Design\", \"Prototyping\"],\n    \"experience_years\": 5\n  }\n}"
-        },
-        "url": {
-          "raw": "{{base_url}}/api/ai/recommendations",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "ai",
-            "recommendations"
-          ]
-        }
-      }
-    }
+    { "name": "Health", "request": { "method": "GET", "url": "http://127.0.0.1:8080/api/health" } },
+    { "name": "Register (seeker)", "request": {
+      "method": "POST",
+      "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "http://127.0.0.1:8080/api/auth/register",
+      "body": { "mode": "raw", "raw": "{\"email\":\"newuser@example.com\",\"password\":\"password123\"}" }
+    }},
+    { "name": "Login (seeker)", "request": {
+      "method": "POST",
+      "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "http://127.0.0.1:8080/api/auth/login",
+      "body": { "mode": "raw", "raw": "{\"email\":\"seeker@example.com\",\"password\":\"password123\"}" }
+    }},
+    { "name": "List Jobs", "request": { "method": "GET", "url": "http://127.0.0.1:8080/api/jobs?page=1&limit=10" } },
+    { "name": "Create Job", "request": {
+      "method": "POST",
+      "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "http://127.0.0.1:8080/api/jobs/create",
+      "body": { "mode": "raw", "raw": "{\"title\":\"UX Researcher\",\"description\":\"Help us improve job matching.\",\"location\":\"Remote\"}" }
+    }},
+    { "name": "Apply to Job", "request": {
+      "method": "POST",
+      "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "http://127.0.0.1:8080/api/jobs/apply",
+      "body": { "mode": "raw", "raw": "{\"job_id\":1,\"cover_letter\":\"Excited to contribute!\"}" }
+    }},
+    { "name": "My Applications", "request": { "method": "GET", "url": "http://127.0.0.1:8080/api/applications/mine" } },
+    { "name": "AI: Analyze CV", "request": {
+      "method": "POST",
+      "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "http://127.0.0.1:8080/api/ai/cv/analyze",
+      "body": { "mode": "raw", "raw": "{\"text\":\"My CV text here...\"}" }
+    }},
+    { "name": "AI: Cover Letter", "request": {
+      "method": "POST",
+      "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "http://127.0.0.1:8080/api/ai/cover-letter",
+      "body": { "mode": "raw", "raw": "{\"job_title\":\"UX Researcher\",\"company\":\"Jobnet\"}" }
+    }},
+    { "name": "AI: Recommendations", "request": {
+      "method": "POST",
+      "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "http://127.0.0.1:8080/api/ai/recommendations",
+      "body": { "mode": "raw", "raw": "{\"profile\":{\"skills\":[\"UI Design\",\"Research\"],\"experience_years\":5}}" }
+    }}
   ]
 }
