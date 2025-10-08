@@ -60,6 +60,10 @@ Demo accounts (from seeds):
 - **Seeker:** `seeker@example.com` / `password123`
 - **Employer:** `employer@example.com` / `password123`
 
+## Troubleshooting
+
+- **Composer can't reach Packagist (proxy 403):** See [docs/troubleshooting/composer-proxy.md](docs/troubleshooting/composer-proxy.md) for steps to reset or configure proxy settings so `composer install` can fetch dependencies.
+
 ## (Optional) Docker
 ```bash
 docker compose up --build -d
