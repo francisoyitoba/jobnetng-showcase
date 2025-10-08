@@ -80,7 +80,7 @@ DB_PASS=
 
 MAIL_FROM=hello@example.com
 
-AI_PROVIDER=mock           # mock|openai|custom
+AI_PROVIDER=mock   
 OPENAI_API_KEY=
 
 OAUTH_GOOGLE_CLIENT_ID=
