@@ -1,0 +1,127 @@
+{
+  "info": {
+    "name": "Jobnet Showcase",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8080/api/health"
+      }
+    },
+    {
+      "name": "Register (seeker)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "http://127.0.0.1:8080/api/auth/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"newuser@example.com\",\"password\":\"password123\"}"
+        }
+      }
+    },
+    {
+      "name": "Login (seeker)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "http://127.0.0.1:8080/api/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"seeker@example.com\",\"password\":\"password123\"}"
+        }
+      }
+    },
+    {
+      "name": "List Jobs",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8080/api/jobs?page=1&limit=10"
+      }
+    },
+    {
+      "name": "Create Job",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "http://127.0.0.1:8080/api/jobs/create",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\":\"UX Researcher\",\"description\":\"Help us improve job matching.\",\"location\":\"Remote\"}"
+        }
+      }
+    },
+    {
+      "name": "Apply to Job",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "http://127.0.0.1:8080/api/jobs/apply",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"job_id\":1,\"cover_letter\":\"Excited to contribute!\"}"
+        }
+      }
+    },
+    {
+      "name": "My Applications",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8080/api/applications/mine"
+      }
+    },
+    {
+      "name": "AI: Analyze CV",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "http://127.0.0.1:8080/api/ai/cv/analyze",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\":\"My CV text here...\"}"
+        }
+      }
+    },
+    {
+      "name": "AI: Cover Letter",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "http://127.0.0.1:8080/api/ai/cover-letter",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"job_title\":\"UX Researcher\",\"company\":\"Jobnet\"}"
+        }
+      }
+    },
+    {
+      "name": "AI: Recommendations",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "http://127.0.0.1:8080/api/ai/recommendations",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"profile\":{\"skills\":[\"UI Design\",\"Research\"],\"experience_years\":5}}"
+        }
+      }
+    }
+  ]
+}

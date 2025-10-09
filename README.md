@@ -52,9 +52,24 @@ job recommendations, and cover letter generation.
    - `POST /api/jobs/apply`
    - `GET  /api/applications/mine`
 
+## Quick test with Postman
+
+Import the [Jobnet Showcase collection](docs/postman/Jobnet.showcase.collection.json) into Postman to exercise the basics quickly. The bundle covers:
+- Health check
+- Auth register/login (seeker)
+- Job listing, creation, and apply flows
+- Application history
+- AI helpers for CV analysis, cover letters, and recommendations
+
+Update the request URLs if your server runs on a different host or port.
+
 Demo accounts (from seeds):
 - **Seeker:** `seeker@example.com` / `password123`
 - **Employer:** `employer@example.com` / `password123`
+
+## Troubleshooting
+
+- **Composer can't reach Packagist (proxy 403):** See [docs/troubleshooting/composer-proxy.md](docs/troubleshooting/composer-proxy.md) for steps to reset or configure proxy settings so `composer install` can fetch dependencies.
 
 ## (Optional) Docker
 ```bash
